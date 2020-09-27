@@ -19,11 +19,11 @@ class Login extends CI_Controller
 
     function aksi_login()
     {
-        $username = htmlspecialchars($this->input->post('username'));
-        $password = htmlspecialchars($this->input->post('password'));
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
 
         $cek = $this->m_login->auth($username, $password);
-        if ($cek->num_rows > 0) {
+        if ($cek->num_rows() > 0) {
             $data = $cek->row_array();
             $this->session->set_userdata('status', "login");
             if ($data['role'] == '1') {
