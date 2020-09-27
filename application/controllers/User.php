@@ -1,11 +1,12 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Unitkerja extends CI_Controller
+class User extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
+        $this->load->model("m_user");
         $this->load->model("m_unitkerja");
         if ($this->session->userdata('status') != "login") {
             redirect(base_url("login"));
@@ -16,50 +17,52 @@ class Unitkerja extends CI_Controller
     public function index()
     {
         $data["unitKerja"] = $this->m_unitkerja->getAll();
+        $data["user"] = $this->m_user->getAll();
+        $data["kode"] = $this->m_user->getKode();
         $this->load->view("templates/unitkerja_header");
-        $this->load->view("administrator/v_unitkerja", $data);
+        $this->load->view("administrator/v_user", $data);
         $this->load->view("templates/unitkerja_footer");
     }
 
     public function add()
     {
-        $unitkerja = $this->m_unitkerja;
+        $user = $this->m_user;
         $validation  = $this->form_validation;
-        $validation->set_rules($unitkerja->rules());
+        $validation->set_rules($user->rules());
 
         if ($validation->run()) {
-            $unitkerja->save();
+            $user->save();
         }
 
-        redirect("unitkerja");
+        redirect("user");
         $this->session->set_flashdata('success', 'Berhasil');
     }
 
     public function edit($id = null)
     {
-        if (!isset($id)) redirect('unitkerja');
+        if (!isset($id)) redirect('user');
 
-        $unitkerja = $this->m_unitkerja;
+        $user = $this->m_user;
         $validation = $this->form_validation;
-        $validation->set_rules($unitkerja->rules());
+        $validation->set_rules($user->rules());
 
         if ($validation->run()) {
-            $unitkerja->update();
+            $user->update();
             $this->session->set_flashdata('success', 'Berhasil');
         }
 
-        $data["unitkerja"] = $unitkerja->getById($id);
-        if (!$data["unitkerja"]) show_404();
+        $data["user"] = $user->getById($id);
+        if (!$data["user"]) show_404();
 
-        $this->load->view("unitkerja", $data);
+        $this->load->view("user", $data);
     }
 
     public function delete($id = null)
     {
         if (!isset($id)) show_404();
 
-        if ($this->m_unitkerja->delete($id)) {
-            redirect(site_url('unitkerja'));
+        if ($this->m_user->delete($id)) {
+            redirect(site_url('user'));
         }
     }
 }

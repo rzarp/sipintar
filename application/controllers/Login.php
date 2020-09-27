@@ -22,7 +22,7 @@ class Login extends CI_Controller
         $username = $this->input->post('username');
         $password = $this->input->post('password');
         $where = array(
-            'username' => $username,
+            'namaUser' => $username,
             'password' => md5($password)
         );
         $cek = $this->m_login->cek_login("admin", $where)->num_rows();
@@ -34,8 +34,8 @@ class Login extends CI_Controller
             );
 
             $this->session->set_userdata($data_session);
-
-            redirect(base_url("admin"));
+            if ($this->m_login->cek_login())
+                redirect(base_url("admin"));
         } else {
             redirect(base_url("login"));
         }

@@ -80,7 +80,7 @@ class M_unitkerja extends CI_Model
 
     public function getById($id)
     {
-        return $this->db->get_where($this->_table, ["kode" => $id])->row();
+        return $this->db->get_where($this->_table, ["kodeUK" => $id])->row();
     }
 
     public function save()
@@ -110,11 +110,11 @@ class M_unitkerja extends CI_Model
         $this->provinsi = $post["provinsi"];
         $this->negara = $post["negara"];
         $this->kodePos = $post["kodePos"];
-        return $this->db->update($this->_table, $this, array('kode' => $post['id']));
+        return $this->db->update($this->_table, $this, array('kodeUK' => $post['kode']));
     }
 
     public function delete($id)
     {
-        return $this->db->delete($this->_table, array("kode" => $id));
+        return $this->db->delete($this->_table, array("kodeUK" => $id));
     }
 }

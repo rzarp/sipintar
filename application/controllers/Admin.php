@@ -14,7 +14,7 @@ class Admin extends CI_Controller
 
     function index()
     {
-        $this->load->view('templates/dashboard_header');
+        $this->load->view("templates/dashboard_header");
         $this->load->view('dashboard');
         $this->load->view('templates/dashboard_footer');
     }

@@ -19,8 +19,7 @@
            <li class="nav-item active">
                <a class="nav-link" href="admin">
                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                   <span>Dashboard</span>
-                </a>
+                   <span>Dashboard</span></a>
            </li>
 
            <!-- Nav Item - Pages Collapse Menu -->
@@ -31,19 +30,19 @@
                </a>
            </li>
            <li class="nav-item active">
-               <a class="nav-link" href="datauser">
+               <a class="nav-link" href="user">
                    <i class="fas fa-fw fa-user"></i>
                    <span>Data User</span>
                </a>
            </li>
            <li class="nav-item active">
-               <a class="nav-link" href="unitkerja">
+               <a class="nav-link" href="kurir">
                    <i class="fas fa-fw fa-rocket"></i>
                    <span>Data Kurir</span>
                </a>
            </li>
            <li class="nav-item active">
-               <a class="nav-link" href="unitkerja">
+               <a class="nav-link" href="laporan">
                    <i class="fas fa-fw fa-tasks"></i>
                    <span>Laporan Pengiriman</span>
                </a>
@@ -52,12 +51,6 @@
                <a class="nav-link" href="unitkerja">
                    <i class="fas fa-fw fa-save"></i>
                    <span>Back Up</span>
-               </a>
-           </li>
-           <li class="nav-item active">
-               <a class="nav-link" href="<?php echo base_url('login/logout'); ?>">
-                   <i class="fas fa-fw fa fa-key"></i>
-                   <span>Logout</span>
                </a>
            </li>
 
