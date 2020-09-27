@@ -51,7 +51,7 @@
                             } ?>
                         </td>
                         <td>
-                            <?= $user->namaUser ?>
+                            <?= $user->username ?>
                         </td>
                         <td>
                             <?= $user->npp ?>

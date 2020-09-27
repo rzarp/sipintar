@@ -2,8 +2,10 @@
 
 class M_login extends CI_Model
 {
-    function cek_login($table, $where)
+    function auth($username, $password)
     {
-        return $this->db->get_where($table, $where);
+        $query = $this->db->query("SELECT * FROM datauser WHERE username=$username AND password=$password LIMIT 1");
+        return $query;
+        //return $this->db->get_where($table, $where);
     }
 }

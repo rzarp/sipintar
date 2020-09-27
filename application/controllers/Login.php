@@ -19,25 +19,28 @@ class Login extends CI_Controller
 
     function aksi_login()
     {
-        $username = $this->input->post('username');
-        $password = $this->input->post('password');
-        $where = array(
-            'namaUser' => $username,
-            'password' => md5($password)
-        );
-        $cek = $this->m_login->cek_login("admin", $where)->num_rows();
-        if ($cek > 0) {
+        $username = htmlspecialchars($this->input->post('username'));
+        $password = htmlspecialchars($this->input->post('password'));
 
-            $data_session = array(
-                'nama' => $username,
-                'status' => "login"
-            );
-
-            $this->session->set_userdata($data_session);
-            if ($this->m_login->cek_login())
-                redirect(base_url("admin"));
-        } else {
-            redirect(base_url("login"));
+        $cek = $this->m_login->auth($username, $password);
+        if ($cek->num_rows > 0) {
+            $data = $cek->row_array();
+            $this->session->set_userdata('status', "login");
+            if ($data['role'] == '1') {
+                //admin
+                $this->session->set_userdata('nama', $username);
+                redirect('admin');
+            } else if ($data['role'] == '2') {
+                //ekspedisi
+                $this->session->set_userdata('nama', $username);
+                redirect('ekspedisi');
+            } else if ($data['role'] == '3') {
+                //user
+                $this->session->set_userdata('nama', $username);
+                redirect('t_user');
+            } else {
+                redirect(base_url('login'));
+            }
         }
     }
 
