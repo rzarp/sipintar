@@ -4,14 +4,37 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Unit Kerja</h1>
+    <h1 class="h3 mb-2 text-gray-800">Laporan Pengiriman</h1>
 
+    <div class="card-header py-2">
+    <form class="form-inline">
+        <label class="mr-sm-2" for="inlineFormCustomSelect">From Date</label>
+        <input type="date" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+        </input>
+
+        <label class="mr-sm-2" for="inlineFormCustomSelect">To Date</label>
+            <input type="date" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+        </label>
+
+        <button type="submit" class="btn btn-primary"><i class="fas fa-search fa-sm"></i> </button> 
+        </form>
+    </div>
     <!-- DataTales Example -->
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">
+        <h6 class="mr-1 font-weight-bold text-primary">
             <a href="#" data-toggle="modal" data-target="#modaltambahdata" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Tambah Data</a>
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-print fa-sm text-white-50"></i> Print</a>
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-file fa-sm text-white-50"></i> Export Excel</a>
+            <a href="#" class="d-none d-sm-inline-block ">
+            <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </a>
         </h6>
     </div>
     <div class="table-responsive-sm">

@@ -85,92 +85,78 @@
 </div>
 <!-- End of Main Content -->
 
-
 <!-- Modal tambah data -->
-<div class="modal fade" id="modaltambahdata" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Tambah Data</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-sm-4" Style="border-right:1px solid;">
-                        <form action="<?= base_url('user/add') ?>" method="post">
-                            <div class="form-group row">
-                                <label>Asal Unit Kerja</label>
-                                <select name="asal" id="asal" onchange="getAsal(this)">
-                                    <?= base_url('user') ?>
-                                    <?php foreach ($unitKerja as $user) : ?>
-                                        <option value="<?= $user->namaUK ?>"><?= $user->namaUK ?></option>
-                                    <?php endforeach ?>
-                                </select>
-                            </div>
-                            <div class="form-group row">
-                                <label>Privilege</label>
-                                <select name="role" id="role">
-                                    <option value="1">Administrator</option>
-                                    <option value="2">Ekspedisi</option>
-                                    <option value="3">User</option>
-                                </select>
-                            </div>
-                            <div class="form-group row">
-                                <label>Nama User</label>
-                                <input type="text" class="form-control" name="nama" placeholder="">
-                            </div>
-                            <div class="form-group row">
-                                <label>NPP</label>
-                                <input type="text" class="form-control" name="npp" placeholder="">
-                            </div>
-                            <div class="form-group row">
-                                <label>Posisi Jabatan</label>
-                                <input type="text" class="form-control" name="posisi" placeholder="">
-                            </div>
-                            <div class="form-group row">
-                                <label>Email</label>
-                                <input type="text" class="form-control" name="email" placeholder="">
-                            </div>
-                            <div class="form-group row">
-                                <label>Password</label>
-                                <input type="text" class="form-control" name="pass" placeholder="">
-                            </div>
-                            <div class="form-group row">
-                                <label>kode BC</label>
-                                <select name="kodebc" id="">
-                                    <?= base_url('user') ?>
-                                    <?php foreach ($kode as $kode) : ?>
-                                        <option value="<?= $kode->kodeBc ?>"><?= $kode->kodeBc ?></option>
-                                    <?php endforeach ?>
-                                </select>
-                            </div>
-                            <div class="form-group row">
-                                <label>Alamat Pengiriman</label>
-                                <input type="text" class="form-control" name="alamat" placeholder="">
-                            </div>
-                            <input class="btn btn-primary" type="submit" value="Simpan" />
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">
-                                Keluar
-                            </button>
-                        </form>
-                    </div>
-                    <div class="col-sm-7">
-                        <table class="table table-bordered dataTable">
-                            <tr>
-                                <th>No</th>
-                                <th>Kode BC</th>
-                                <th>No</th>
-                                <th>Kode BC</th>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="modal fade" id="modaltambahdata" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tambah Data User</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="<?= base_url('user/add') ?>" method="post">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Asal Unit Kerja:</label>
+            <select class="custom-select mr-sm-2" name="asal" id="asal" onchange="getAsal(this)">
+                <?= base_url('user') ?>
+                <?php foreach ($unitKerja as $user) : ?>
+                <option value="<?= $user->namaUK ?>"><?= $user->namaUK ?></option>
+                <?php endforeach ?>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Privilege:</label>
+            <select class="custom-select mr-sm-2" name="role" id="role">
+                <option value="1">Administrator</option>
+                <option value="2">Ekspedisi</option>
+                <option value="3">User</option>
+            </select> 
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Nama User:</label>
+            <input type="text" class="form-control" name="nama" placeholder="Nama User">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">NPP:</label>
+            <input type="text" class="form-control" name="npp" placeholder="NPP">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Posisi Jabatan:</label>
+            <input type="text" class="form-control" name="posisi" placeholder="Posisi Jabatan">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Email:</label>
+            <input type="text" class="form-control" name="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Password:</label>
+            <input type="text" class="form-control" name="pass" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Kode Bc:</label>
+            <select class="custom-select mr-sm-2" name="kodebc" id="">
+                <?= base_url('user') ?>
+                <?php foreach ($kode as $kode) : ?>
+                    <option value="<?= $kode->kodeBc ?>"><?= $kode->kodeBc ?></option>
+                <?php endforeach ?>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Alamat Pengiriman:</label>
+            <input type="text" class="form-control" name="alamat" placeholder="Alamat Pengiriman">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <input class="btn btn-primary" type="submit" value="Simpan"/>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Keluar</button>
+      </div>
     </div>
+  </div>
 </div>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
@@ -184,3 +170,9 @@
         console.log(value);
     }
 </script>
+
+
+
+
+
+

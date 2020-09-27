@@ -51,73 +51,31 @@
 <!-- End of Main Content -->
 
 <!-- Modal tambah data -->
-<div class="modal fade" id="modaltambahdata" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Tambah Data</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-sm-4" Style="border-right:1px solid;">
-                        <form action="<?php echo base_url('unitkerja/add') ?>" method="post">
-                            <div class="form-group row">
-                                <label>Kode Unit Kerja</label>
-                                <input type="text" class="form-control" name="kode" placeholder="Kode Unit Kerja">
-                            </div>
-                            <div class="form-group row">
-                                <label>Nama Unit Kerja</label>
-                                <input type="text" class="form-control" name="nama" placeholder="Nama Unit Kerja">
-                            </div>
-                            <div class="form-group row">
-                                <label>Alamat</label>
-                                <input type="text" class="form-control" name="alamat" placeholder="Alamat">
-                            </div>
-                            <div class="form-group row">
-                                <label>Kelurahan</label>
-                                <input type="text" class="form-control" name="kelurahan" placeholder="Kelurahan">
-                            </div>
-                            <div class="form-group row">
-                                <label>Kecamatan</label>
-                                <input type="text" class="form-control" name="kecamatan" placeholder="Kecamatan">
-                            </div>
-                            <div class="form-group row">
-                                <label>Kabupaten/Kota</label>
-                                <input type="text" class="form-control" name="kota" placeholder="Kabupaten/Kota">
-                            </div>
-                            <div class="form-group row">
-                                <label>Provinsi</label>
-                                <input type="text" class="form-control" name="provinsi" placeholder="Provinsi">
-                            </div>
-                            <div class="form-group row">
-                                <label>Negara</label>
-                                <input type="text" class="form-control" name="negara" placeholder="Negara">
-                            </div>
-                            <div class="form-group row">
-                                <label>Kode Pos</label>
-                                <input type="text" class="form-control" name="kodePos" placeholder="Kode Pos">
-                            </div>
-                            <input class="btn btn-primary" type="submit" value="Simpan" />
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">
-                                Keluar
-                            </button>
-                        </form>
-                    </div>
-                    <div class="col-sm-7">
-                        <table class="table table-bordered dataTable">
-                            <tr>
-                                <th>No</th>
-                                <th>Kode BC</th>
-                                <th>No</th>
-                                <th>Kode BC</th>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="modal fade" id="modaltambahdata" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tambah Data Kurir</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="<?= base_url('user/add') ?>" method="post">
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Nama Kurir:</label>
+            <input type="text" class="form-control" name="nama" placeholder="Nama Kurir">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Action:</label>
+            <input type="text" class="form-control" name="npp" placeholder="Action">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <input class="btn btn-primary" type="submit" value="Simpan"/>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Keluar</button>
+      </div>
     </div>
+  </div>
 </div>

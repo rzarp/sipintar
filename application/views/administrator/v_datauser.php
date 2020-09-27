@@ -118,20 +118,6 @@
                                     Keluar
                                 </button>
                             </form>
-
-                    <div class="col-sm-6">
-                        <table class="table table-bordered dataTable">
-                            <tr>
-                                <th colspan="4" class="text-center">Edit Data kode Bc</th>
-                            </tr>
-                            <tr>
-                                <th>No</th>
-                                <th>Kode BC</th>
-                                <th>No</th>
-                                <th>Kode BC</th>
-                            </tr>
-                        </table>
-                    </div>
                     </div>            
                 </div>
             </div>
