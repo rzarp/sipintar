@@ -29,15 +29,15 @@ class Login extends CI_Controller
             if ($data['role'] == '1') {
                 //admin
                 $this->session->set_userdata('nama', $username);
-                redirect('admin');
+                redirect('administrator/admin');
             } else if ($data['role'] == '2') {
                 //ekspedisi
                 $this->session->set_userdata('nama', $username);
-                redirect('ekspedisi');
+                redirect('ekspedisi/ekspedisi');
             } else if ($data['role'] == '3') {
                 //user
                 $this->session->set_userdata('nama', $username);
-                redirect('t_user');
+                redirect('user/user');
             } else {
                 redirect(base_url('login'));
             }
