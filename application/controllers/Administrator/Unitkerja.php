@@ -35,6 +35,12 @@ class Unitkerja extends CI_Controller
         $this->session->set_flashdata('success', 'Berhasil');
     }
 
+    public function getdata($id)
+    {
+        $unitkerja = $this->m_unitkerja;
+        return $data["unitk"] = $unitkerja->getById($id);
+    }
+
     public function edit($id = null)
     {
         if (!isset($id)) redirect('administrator/unitkerja');
@@ -51,7 +57,7 @@ class Unitkerja extends CI_Controller
         $data["unitkerja"] = $unitkerja->getById($id);
         if (!$data["unitkerja"]) show_404();
 
-        $this->load->view("administrator/unitkerja", $data);
+        redirect("administrator/unitkerja");
     }
 
     public function delete($id = null)

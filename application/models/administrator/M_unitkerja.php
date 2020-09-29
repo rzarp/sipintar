@@ -2,7 +2,7 @@
 
 class M_unitkerja extends CI_Model
 {
-    private $_table = "unitKerja";
+    private $_table = "unitkerja";
 
     public $kodeUK;
     public $namaUK;

@@ -1,10 +1,10 @@
-<?php $this->load->view("templates/sidebar") ?>
-<?php $this->load->view("templates/navbar") ?>
+<?php $this->load->view("templates/sidebar_eks") ?>
+<?php $this->load->view("templates/navbar_eks") ?>
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Unit Kerja</h1>
+    <h1 class="h3 mb-2 text-gray-800">INPUT ANGGARAN</h1>
 
     <!-- DataTales Example -->
     <div class="card-header py-3">
@@ -34,7 +34,7 @@
             </thead>
             <tbody>
                 <?php $no = 1 ?>
-                <?php foreach ($unitKerja as $unitk) : ?>
+                <?php foreach ($unitkerja as $unitk) : ?>
                     <tr>
                         <td>
                             <?= $no++ ?>
@@ -238,7 +238,7 @@
 </div>
 
 <!-- Modal edi data -->
-<?php foreach ($unitKerja as $unitk) : ?>
+<?php foreach ($unitkerja as $unitk) : ?>
 <div class="modal fade" id="modaleditdata<?= $unitk->kodeUK; ?>" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">

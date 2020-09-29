@@ -49,81 +49,72 @@
 <!-- End of Main Content -->
 
 <!-- Modal tambah data -->
-<div class="modal fade" id="modaltambahdata" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
+<div class="modal fade" id="modaltambahdata" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Tambah Data User</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Data User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <div class="container">
-                    <div class="row">
-                        <form action="<?php echo base_url('unitkerja/add') ?>" method="post">
-                            <div class="form-group row">
-                                <label class="col-sm-6 col-form-label">Kode Unit Kerja</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" name="kode" placeholder="Kode Unit Kerja">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label class="col-sm-6 col-form-label">Nama Unit Kerja</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" name="nama" placeholder="Nama Unit Kerja">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-6 col-form-label">Alamat</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" name="alamat" placeholder="Alamat">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-6 col-form-label">Kelurahan</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" name="kelurahan" placeholder="Kelurahan">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-6 col-form-label">Kecamatan</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" name="kecamatan" placeholder="Kecamatan">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-6 col-form-label">Kabupaten/Kota</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" name="kota" placeholder="Kabupaten/Kota">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-6 col-form-label">Provinsi</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" name="provinsi" placeholder="Provinsi">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-6 col-form-label">Negara</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" name="negara" placeholder="Negara">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-6 col-form-label">Kode Pos</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" name="kodePos" placeholder="Kode Pos">
-                                </div>
-                            </div>
-                            <input class="btn btn-primary" type="submit" value="Simpan" />
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">
-                                Keluar
-                            </button>
-                        </form>
+                <form action="<?= base_url('user/add') ?>" method="post">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Asal Unit Kerja:</label>
+                        <select class="custom-select mr-sm-2" name="asal" id="asal" onchange="getAsal(this)">
+                            <?= base_url('user') ?>
+                            <?php foreach ($unitKerja as $user) : ?>
+                                <option value="<?= $user->namaUK ?>"><?= $user->namaUK ?></option>
+                            <?php endforeach ?>
+                        </select>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Privilege:</label>
+                        <select class="custom-select mr-sm-2" name="role" id="role">
+                            <option value="1">Administrator</option>
+                            <option value="2">Ekspedisi</option>
+                            <option value="3">User</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Nama User:</label>
+                        <input type="text" class="form-control" name="nama" placeholder="Nama User">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">NPP:</label>
+                        <input type="text" class="form-control" name="npp" placeholder="NPP">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Posisi Jabatan:</label>
+                        <input type="text" class="form-control" name="posisi" placeholder="Posisi Jabatan">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Email:</label>
+                        <input type="text" class="form-control" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Password:</label>
+                        <input type="text" class="form-control" name="pass" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Kode Bc:</label>
+                        <select class="custom-select mr-sm-2" name="kodebc" id="">
+                            <?= base_url('user') ?>
+                            <?php foreach ($kode as $kode) : ?>
+                                <option value="<?= $kode->kodeBc ?>"><?= $kode->kodeBc ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Alamat Pengiriman:</label>
+                        <input type="text" class="form-control" name="alamat" placeholder="Alamat Pengiriman">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <input class="btn btn-primary" type="submit" value="Simpan" />
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Keluar</button>
             </div>
         </div>
     </div>
