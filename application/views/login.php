@@ -10,25 +10,30 @@
           <!-- Nested Row within Card Body -->
           <div class="row">
             <div class="col-lg-6 d-none d-lg-block">
-              <img src="<?php echo base_url('assets/img/login.svg')?>" alt="">
+              <img src="<?php echo base_url('assets/img/logo_login.jpeg')?>" alt="" width="500">
             </div>
             <div class="col-lg-6">
               <div class="p-5">
                 <div class="text-center">
-                  <h1 class="h4 text-gray-900 mb-4">Sucofindo</h1>
+                  <img src="<?php echo base_url('assets/img/sucofindo.svg')?>" alt="sucovindo" width="100">
                 </div>
+                <br>
                 <form action="<?php echo base_url('login/aksi_login'); ?>" class="user" method="post">
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-user" name="username" placeholder="Username...">
+                    <input type="text" class="form-control form-control-user" name="username" placeholder="Email..." required>
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-user" name="password" placeholder="Password">
+                    <input type="password" class="form-control form-control-user" name="password" placeholder="Password" required>
+                  </div>
+                  <div class="text-right py-1 mr-2">
+                    <a class="small" href="#">Lupa Password ?</a>
                   </div>
                   <button type="submit" class="btn btn-primary btn-user btn-block">
                     Login
                   </button>
                 </form>
                 <hr>
+                <h6 class="text-center" style="color: DarkGray;"> Assembled @2020 </h6> 
               </div>
             </div>
           </div>
