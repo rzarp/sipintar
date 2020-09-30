@@ -17,28 +17,16 @@
 
            <!-- Nav Item - Dashboard -->
            <li class="nav-item active">
-               <a class="nav-link" href="admin">
+               <a class="nav-link" href="user">
                    <i class="fas fa-fw fa-tachometer-alt"></i>
                    <span>Dashboard</span></a>
            </li>
 
            <!-- Nav Item - Pages Collapse Menu -->
            <li class="nav-item active">
-               <a class="nav-link" href="unitkerja">
-                   <i class="fas fa-fw fa-building"></i>
-                   <span>Data Unit Kerja</span>
-               </a>
-           </li>
-           <li class="nav-item active">
-               <a class="nav-link" href="user">
-                   <i class="fas fa-fw fa-user"></i>
-                   <span>Data User</span>
-               </a>
-           </li>
-           <li class="nav-item active">
-               <a class="nav-link" href="kurir">
+               <a class="nav-link" href="kirim">
                    <i class="fas fa-fw fa-rocket"></i>
-                   <span>Data Kurir</span>
+                   <span>Order Pengiriman</span>
                </a>
            </li>
            <li class="nav-item active">
@@ -47,13 +35,6 @@
                    <span>Laporan Pengiriman</span>
                </a>
            </li>
-           <li class="nav-item active">
-               <a class="nav-link" href="backup">
-                   <i class="fas fa-fw fa-save"></i>
-                   <span>Back Up</span>
-               </a>
-           </li>
-
 
 
            <!-- Divider -->

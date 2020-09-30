@@ -99,10 +99,10 @@
         <form action="<?= base_url('user/add') ?>" method="post">
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Asal Unit Kerja:</label>
-            <select class="custom-select mr-sm-2" name="asal" id="asal" onchange="getAsal(this)">
+            <select class="custom-select mr-sm-2" name="asal" id="asal">
                 <?= base_url('user') ?>
                 <?php foreach ($unitKerja as $user) : ?>
-                <option value="<?= $user->namaUK ?>"><?= $user->namaUK ?></option>
+                <option value="<?= $user->kodeUK ?>"><?= $user->namaUK ?></option>
                 <?php endforeach ?>
             </select>
           </div>
@@ -137,7 +137,7 @@
           <div class="form-group">
             <label for="message-text" class="col-form-label">Kode Bc:</label>
             <select class="custom-select mr-sm-2" name="kodebc" id="">
-                <?= base_url('user') ?>
+                <?= base_url('user/getKode') ?>
                 <?php foreach ($kode as $kode) : ?>
                     <option value="<?= $kode->kodeBc ?>"><?= $kode->kodeBc ?></option>
                 <?php endforeach ?>
@@ -165,12 +165,17 @@
         $('#deleteModal').modal();
     }
 
-    function getAsal(selectObject) {
-        var value = selectObject.value;
-        console.log(value);
-    }
-</script>
+    $(document).ready(function(){
+            $('#asal').change(function(){
+                //Selected value
+                var inputValue = $(this).val();
+                console.log(inputValue);
 
+                //Ajax for calling php function
+                $.post('<?= base_url('administrator/user/getkode')?>');
+            });
+        });
+</script>
 
 
 

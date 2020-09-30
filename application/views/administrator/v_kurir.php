@@ -3,48 +3,46 @@
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
-    <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Data Kurir</h1>
+  <!-- Page Heading -->
+  <h1 class="h3 mb-2 text-gray-800">Data Kurir</h1>
 
-    <!-- DataTales Example -->
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">
-            <a href="#" data-toggle="modal" data-target="#modaltambahdata" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Tambah Data</a>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-print fa-sm text-white-50"></i> Print</a>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-file fa-sm text-white-50"></i> Export Excel</a>
-        </h6>
-    </div>
-    <div class="table-responsive-sm">
-        <table class="table table-sm table-bordered " style="font-size: small;">
-            <thead>
-                <tr class="bg-primary text-white">
-                    <th>No</th>
-                    <th>Nama Kurir</th>
-                    <th>Link</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php $no = 1 ?>
-                <?php foreach ($kurir as $kurir) : ?>
-                    <tr>
-                        <td>
-                            <?= $no++ ?>
-                        </td>
-                        <td>
-                            <?= $kurir->nama ?>
-                        </td>
-                        <td>
-                            #
-                        </td>
-                        <td>
+  <!-- DataTales Example -->
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">
+      <a href="#" data-toggle="modal" data-target="#modaltambahdata" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Tambah Data</a>
+    </h6>
+  </div>
+  <div class="table-responsive-sm">
+    <table class="table table-sm table-bordered " style="font-size: small;">
+      <thead>
+        <tr class="bg-primary text-white">
+          <th>No</th>
+          <th>Nama Kurir</th>
+          <th>Link</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php $no = 1 ?>
+        <?php foreach ($kurir as $kurir) : ?>
+          <tr>
+            <td>
+              <?= $no++ ?>
+            </td>
+            <td>
+              <?= $kurir->nama ?>
+            </td>
+            <td>
+              #
+            </td>
+            <td>
 
-                        </td>
-                    </tr>
-                <?php endforeach ?>
-            </tbody>
-        </table>
-    </div>
+            </td>
+          </tr>
+        <?php endforeach ?>
+      </tbody>
+    </table>
+  </div>
 </div>
 <!-- /.container-fluid -->
 </div>
@@ -73,7 +71,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <input class="btn btn-primary" type="submit" value="Simpan"/>
+        <input class="btn btn-primary" type="submit" value="Simpan" />
         <button type="button" class="btn btn-danger" data-dismiss="modal">Keluar</button>
       </div>
     </div>

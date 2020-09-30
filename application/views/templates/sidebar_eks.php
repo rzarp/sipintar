@@ -17,40 +17,40 @@
 
            <!-- Nav Item - Dashboard -->
            <li class="nav-item active">
-               <a class="nav-link" href="admin">
+               <a class="nav-link" href="ekspedisi">
                    <i class="fas fa-fw fa-tachometer-alt"></i>
                    <span>Dashboard</span></a>
            </li>
 
            <!-- Nav Item - Pages Collapse Menu -->
            <li class="nav-item active">
-               <a class="nav-link" href="unitkerja">
+               <a class="nav-link" href="anggaran">
                    <i class="fas fa-fw fa-building"></i>
-                   <span>Data Unit Kerja</span>
+                   <span>Input Anggaran</span>
                </a>
            </li>
            <li class="nav-item active">
-               <a class="nav-link" href="user">
+               <a class="nav-link" href="data_user">
                    <i class="fas fa-fw fa-user"></i>
                    <span>Data User</span>
                </a>
            </li>
            <li class="nav-item active">
-               <a class="nav-link" href="kurir">
+               <a class="nav-link" href="data_penerima">
                    <i class="fas fa-fw fa-rocket"></i>
-                   <span>Data Kurir</span>
+                   <span>Data Penerima</span>
                </a>
            </li>
            <li class="nav-item active">
-               <a class="nav-link" href="laporan">
+               <a class="nav-link" href="input_resi">
                    <i class="fas fa-fw fa-tasks"></i>
-                   <span>Laporan Pengiriman</span>
+                   <span>Input no.resi & biaya</span>
                </a>
            </li>
            <li class="nav-item active">
-               <a class="nav-link" href="backup">
+               <a class="nav-link" href="laporan_eks">
                    <i class="fas fa-fw fa-save"></i>
-                   <span>Back Up</span>
+                   <span>Laporan</span>
                </a>
            </li>
 
