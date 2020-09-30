@@ -18,7 +18,11 @@ class User extends CI_Controller
     {
         $data["unitKerja"] = $this->m_unitkerja->getAll();
         $data["user"] = $this->m_user->getAll();
+<<<<<<< HEAD
         //$data["kode"] = $this->m_user->getKode();
+=======
+        $data["kode"] = $this->m_user->getKode();
+>>>>>>> 5dbb1ef611502d4961e61188ad8b596a44b7953c
         $this->load->view("templates/unitkerja_header");
         $this->load->view("administrator/v_user", $data);
         $this->load->view("templates/unitkerja_footer");
@@ -34,13 +38,21 @@ class User extends CI_Controller
             $user->save();
         }
 
+<<<<<<< HEAD
         redirect("administrator/user");
+=======
+        redirect("user");
+>>>>>>> 5dbb1ef611502d4961e61188ad8b596a44b7953c
         $this->session->set_flashdata('success', 'Berhasil');
     }
 
     public function edit($id = null)
     {
+<<<<<<< HEAD
         if (!isset($id)) redirect('administrator/user');
+=======
+        if (!isset($id)) redirect('user');
+>>>>>>> 5dbb1ef611502d4961e61188ad8b596a44b7953c
 
         $user = $this->m_user;
         $validation = $this->form_validation;
@@ -54,7 +66,11 @@ class User extends CI_Controller
         $data["user"] = $user->getById($id);
         if (!$data["user"]) show_404();
 
+<<<<<<< HEAD
         $this->load->view("administrator/user", $data);
+=======
+        $this->load->view("user", $data);
+>>>>>>> 5dbb1ef611502d4961e61188ad8b596a44b7953c
     }
 
     public function delete($id = null)
@@ -62,6 +78,7 @@ class User extends CI_Controller
         if (!isset($id)) show_404();
 
         if ($this->m_user->delete($id)) {
+<<<<<<< HEAD
             redirect(site_url('administrator/user'));
         }
     }
@@ -78,6 +95,9 @@ class User extends CI_Controller
         if ($_POST['dropdownValue']){
             //call the function or execute the code
             processDrpdown($_POST['dropdownValue']);
+=======
+            redirect(site_url('user'));
+>>>>>>> 5dbb1ef611502d4961e61188ad8b596a44b7953c
         }
     }
 }

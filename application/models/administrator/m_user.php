@@ -120,8 +120,14 @@ class M_user extends CI_Model
         return $this->db->delete($this->_table, array("npp" => $id));
     }
 
+<<<<<<< HEAD
     public function getKode($kode)
     {
         return $this->db->get_where($this->_bc, ["kodeUK" => $kode])->result();
+=======
+    public function getKode()
+    {
+        return $this->db->get($this->_bc)->result();
+>>>>>>> 5dbb1ef611502d4961e61188ad8b596a44b7953c
     }
 }
